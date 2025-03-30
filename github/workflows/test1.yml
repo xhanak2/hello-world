@@ -1,6 +1,12 @@
 name: Simple GitHub Actions workflow
 
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Custom message"
+        required: false
+        default: "Hello, world!"
 
 jobs:
   say_hello:
