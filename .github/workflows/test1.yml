@@ -1,0 +1,21 @@
+name: Simple GitHub Actions workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Custom message"
+        required: false
+        default: "Hello, world!"
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Run Build Script
+      run: |
+        echo "Hello, GitHub Actions!"
